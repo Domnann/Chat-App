@@ -41,3 +41,24 @@ def recieve():
         thread.start
 
 
+#please help me update code
+#thanks
+
+
+from socket import *
+from time import ctime
+
+CLIENT_IP = '192.168.1.109'
+PORT = 23567
+BUFSIZE = 1024
+ADDR = (CLIENT_IP, PORT)
+
+udpCliSock = socket(AF_INET, SOCK_DGRAM)
+
+while True:
+    sendData = input("> ")
+    if sendData is None:
+        break
+    udpCliSock.sendto(sendData.encode(), ADDR)
+
+udpCliSock.close()
